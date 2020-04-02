@@ -36,7 +36,7 @@ class App extends React.Component {
           });
 
 
-          console.log(this.state);
+         
 
         });
 
@@ -47,8 +47,7 @@ class App extends React.Component {
       }  
 
       
-      // this.setState({currentUser: user})
-      // console.log(user);;
+      
     })
     
 
