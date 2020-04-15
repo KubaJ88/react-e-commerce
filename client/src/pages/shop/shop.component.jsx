@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect'; 
@@ -18,12 +18,15 @@ import {firestore, convertCollectionsSnapshotToMap} from '../../firebase/firebas
 
 
 
-class ShopPage extends React.Component {
+const ShopPage =  ({fetchCollectionStart, match}) => {
     
 
-    componentDidMount() { 
-     const {fetchCollectionStart} = this.props;
-     fetchCollectionStart();
+    useEffect(() => {
+        
+        fetchCollectionStart();
+
+    }, [fetchCollectionStart] );
+     
 
 
 
@@ -36,12 +39,12 @@ class ShopPage extends React.Component {
     //         this.setState({loading:false});
     //     });
 
-    }
+    
 
 
 
-    render()  { 
-        const {match} = this.props;
+    
+        
         // const {loading} = this.state;
 
     return (
@@ -58,7 +61,7 @@ class ShopPage extends React.Component {
 
 )
     }
-}  
+
 
 
 // const mapStateToProps = createStructuredSelector({    
